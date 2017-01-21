@@ -24,7 +24,7 @@ while True:
             os.system("mpg321 news.mp3")
 
 
-        owm = pyowm.OWM("77bcfa639fe392ddcdcf102938a2d3b5")
+        owm = pyowm.OWM("API KEY")
         observation = owm.weather_at_place("Blackpool,uk")
         w = observation.get_weather()
 
