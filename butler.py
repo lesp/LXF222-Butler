@@ -4,9 +4,10 @@ import time
 from gtts import gTTS
 import os
 import pyowm
+
 news = feedparser.parse("http://feeds.bbci.co.uk/news/rss.xml?edition=uk")
 pir = MotionSensor(17)
-stories = []
+#stories = []
 
 while True:
     status = pir.wait_for_inactive()
