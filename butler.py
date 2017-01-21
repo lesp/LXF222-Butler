@@ -10,8 +10,8 @@ pir = MotionSensor(17)
 
 while True:
     status = pir.wait_for_inactive()
-    if status == True:
-        print(news['feed']['title'])
+    #if status == True:
+    #    print(news['feed']['title'])
 
         current_time = time.ctime()
         str(current_time)
