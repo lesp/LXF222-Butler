@@ -7,7 +7,6 @@ import pyowm
 
 news = feedparser.parse("http://feeds.bbci.co.uk/news/rss.xml?edition=uk")
 pir = MotionSensor(17)
-#stories = []
 
 while True:
     status = pir.wait_for_inactive()
@@ -21,13 +20,13 @@ while True:
         tts.save("time.mp3")
         os.system("mpg321 time.mp3")
 
-        for i in range(3):
+        for i in range(5):
             tts = gTTS(text=(news['entries'][i]['title']), lang='en-us')
             tts.save("news.mp3")
             os.system("mpg321 news.mp3")
 
 
-        owm = pyowm.OWM('API KEY')
+        owm = pyowm.OWM('77bcfa639fe392ddcdcf102938a2d3b5')
         observation = owm.weather_at_place("Blackpool,uk")
         w = observation.get_weather()
 
