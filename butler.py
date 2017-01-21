@@ -14,7 +14,6 @@ while True:
 
         current_time = time.ctime()
         str(current_time)
-        print(current_time)
         tts = gTTS(text=(current_time), lang='en-us')
         tts.save("time.mp3")
         os.system("mpg321 time.mp3")
@@ -38,6 +37,3 @@ while True:
         tts = gTTS(text=("The current temperature is, "+str(temperature)+"celsius"), lang='en-us')
         tts.save("temperature.mp3")
         os.system("mpg321 temperature.mp3")
-
-        print("The current weather is, ",w.get_status())
-        print("The current temperature is, ",w.get_temperature('celsius')['temp_max'])
