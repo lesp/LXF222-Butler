@@ -1,4 +1,5 @@
 import feedparser
+import time
 from gtts import gTTS
 import os
 import pyowm
@@ -6,6 +7,13 @@ news = feedparser.parse("http://feeds.bbci.co.uk/news/rss.xml?edition=uk")
 stories = []
 
 print(news['feed']['title'])
+
+current_time = time.ctime()
+str(current_time)
+print(current_time)
+tts = gTTS(text=(current_time), lang='en-us')
+tts.save("time.mp3")
+os.system("mpg321 time.mp3")
 
 for i in range(3):
     tts = gTTS(text=(news['entries'][i]['title']), lang='en-us')
